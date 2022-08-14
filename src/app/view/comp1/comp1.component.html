@@ -1,0 +1,16 @@
+user name: <input type="text" [(ngModel)]="userName" />
+<button (click)="search()">Search</button>
+
+<br/> 
+<br/> 
+<br/> 
+
+<div *ngIf="response">
+<p>Name: {{response.name}}</p>
+<p>followers: {{response.followers}}</p>
+<p>Public Repos: {{response.public_repos}}</p>
+<p>URL: {{response.url}}</p>
+
+
+</div>
+

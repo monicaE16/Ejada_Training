@@ -1,0 +1,26 @@
+
+<div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownBasic1" ngbDropdownToggle>Category</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button (click)="setCategory(0)" ngbDropdownItem >All</button>
+  
+        <button (click)="setCategory(item.id)" ngbDropdownItem *ngFor="let item of categories">{{item.name}}</button>
+       
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <br>
+  <br>
+  <br>
+ 
+     <app-product-list    (buyItemPrice)="setPriceAndCount($event)"     [category]="categoryId" ></app-product-list>
+    <h5>Order total price: {{totalPrice}}</h5>
+    <br/>
+    <h5>Number of Items bought:  {{numberOfItems}}</h5>
+    <br/>
+    <br/>
+    <br/>

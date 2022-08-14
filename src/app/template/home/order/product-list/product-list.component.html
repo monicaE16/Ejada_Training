@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Available Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.name}}</td>
+        <td>
+            <img class="img" width="100" height="100" [src]="product.image"/>
+        </td>
+        
+        <td *ngIf="product.availabelQty>0">{{product.availabelQty}}</td>
+        <td *ngIf="product.availabelQty<=0">out of stock</td>
+        <td>{{product.price}}</td>
+        <td>
+            <input type="number" min="0"   [(ngModel)]="product.qty">
+        </td>
+        <td>
+            <button (click)="onBuy(product)" class="btn btn-primary btn-md "  type="button">Buy</button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
