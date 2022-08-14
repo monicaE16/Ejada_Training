@@ -22,7 +22,7 @@
         <td *ngIf="product.availabelQty<=0">out of stock</td>
         <td>{{product.price}}</td>
         <td>
-            <input type="number" min="0"   [(ngModel)]="product.qty">
+            <input type="number" min="0"   [(ngModel)]="product.qty"  oninput="validity.valid||(value='');">
         </td>
         <td>
             <button (click)="onBuy(product)" class="btn btn-primary btn-md "  type="button">Buy</button>
