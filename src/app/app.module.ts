@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ViewModule } from './view/view.module';
 import { OrderComponent } from './template/home/order/order.component';
 import { ProductListComponent } from './template/home/order/product-list/product-list.component';
+import { ProductService } from './services/product/product-service.service';
+import { CategoryService } from './services/category/category-service.service';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import { ProductListComponent } from './template/home/order/product-list/product
     ViewModule
 
   ],
-  providers: [],
+  providers: [ProductService,CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
