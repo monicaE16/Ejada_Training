@@ -76,6 +76,7 @@ this.numberOfItems+=price[1];
  
  setCategory(id:number)
  {
+   console.log("hello");
 
   this.categoryId=id
 

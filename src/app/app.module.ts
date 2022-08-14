@@ -8,7 +8,6 @@ import { HeaderComponent } from './template/header/header.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { HomeComponent } from './template/home/home.component';
-import { ProductTableComponent } from './template/home/product-table/product-table.component';
 import { FormsModule } from '@angular/forms';
 import { ViewModule } from './view/view.module';
 import { OrderComponent } from './template/home/order/order.component';
@@ -22,7 +21,6 @@ import { ProductListComponent } from './template/home/order/product-list/product
     FooterComponent,
     SidebarComponent,
     HomeComponent,
-    ProductTableComponent,
     OrderComponent,
     ProductListComponent,
     

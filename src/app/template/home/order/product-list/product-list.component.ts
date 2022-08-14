@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { ObservedValueTupleFromArray } from 'rxjs';
-import { category } from 'src/app/model/category.model';
 import { product } from 'src/app/model/product.model';
 
 @Component({
@@ -13,7 +12,7 @@ export class ProductListComponent implements OnInit {
   constructor() { }
 
 
-  @Input() category = 0; 
+  @Input() category:number=0; 
   @Output() buyItemPrice = new EventEmitter<number[]>();
 
   allProducts:product[]=[
@@ -64,6 +63,16 @@ export class ProductListComponent implements OnInit {
 
   products:product[]=this.allProducts;
 
+  ngOnChanges() {
+    if(this.category===0)
+    {
+      this.products=this.allProducts;
+    }
+    else
+    {
+   this.products=this.allProducts.filter(product=>product.categoryId===this.category);
+    }
+  }  
 setProductQuantity(count:number,p:product)
 {
   if(count<0)
@@ -98,6 +107,7 @@ setProductQuantity(count:number,p:product)
 
    this.buyItemPrice.emit([totalPrice,numberOfItems]);
  }
+
 
 
   ngOnInit(): void {
